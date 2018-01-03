@@ -4,7 +4,7 @@ This is a ReactJS font picker component with Material Design styling as default 
 
 ## Demo & Examples
 
-Live demo: [andreasur.github.io/react-font-picker](http://andreasur.github.io/react-font-picker/)
+Live demo: [nardeas.github.io/react-font-picker](http://nardeas.github.io/react-font-picker/)
 
 To build the examples locally, run:
 
