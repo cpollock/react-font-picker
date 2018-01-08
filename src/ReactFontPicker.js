@@ -21,8 +21,7 @@ export default class FontPicker extends Component {
 		// Check if stylesheet already exists
 		for (var i=0; i < document.styleSheets.length; i++) {
 
-			var styleSheet = document.styleSheets[i];
-      let parser = document.createElement('a');
+			var styleSheet = document.styleSheets[i], parser = document.createElement('a');
       parser.href = styleSheet.href;
       if(window.location.hostname === parser.hostname){
         var cssRules = styleSheet.rules ? styleSheet.rules : styleSheet.cssRules;
