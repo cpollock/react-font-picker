@@ -47,13 +47,14 @@ var FontPicker = (function (_Component) {
 			for (var i = 0; i < document.styleSheets.length; i++) {
 
 				var styleSheet = document.styleSheets[i];
-				var cssRules = styleSheet.rules ? styleSheet.rules : styleSheet.cssRules;
-
-				if (typeof cssRule !== "undefined" && cssRule !== null) {
-					for (var j = 0; j < cssRules.length; ++j) {
-						if (cssRules[j].selectorText == ".ReactFontPicker") return;
+				try {
+					var cssRules = styleSheet.rules ? styleSheet.rules : styleSheet.cssRules;
+					if (typeof cssRule !== "undefined" && cssRule !== null) {
+						for (var j = 0; j < cssRules.length; ++j) {
+							if (cssRules[j].selectorText == ".ReactFontPicker") return;
+						}
 					}
-				}
+				} catch (e) {}
 			}
 
 			// Create stylesheet on the fly
