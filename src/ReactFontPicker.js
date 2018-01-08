@@ -22,13 +22,17 @@ export default class FontPicker extends Component {
 		for (var i=0; i < document.styleSheets.length; i++) {
 
 			var styleSheet = document.styleSheets[i];
-	    var cssRules = styleSheet.rules ? styleSheet.rules : styleSheet.cssRules;
+      let parser = document.createElement('a');
+      parser.href = styleSheet.href;
+      if(window.location.hostname === parser.hostname){
+        var cssRules = styleSheet.rules ? styleSheet.rules : styleSheet.cssRules;
 
-			if (typeof cssRule !== "undefined" && cssRule !== null) {
-		    for (var j = 0; j < cssRules.length; ++j) {
-		        if(cssRules[j].selectorText == ".ReactFontPicker") return;
-	    	}
-			}
+  			if (typeof cssRule !== "undefined" && cssRule !== null) {
+  		    for (var j = 0; j < cssRules.length; ++j) {
+  		        if(cssRules[j].selectorText == ".ReactFontPicker") return;
+  	    	}
+  			}
+      }
 		}
 
 		// Create stylesheet on the fly
